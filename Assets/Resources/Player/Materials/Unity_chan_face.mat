@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8389800135300731658
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Unity_chan_face
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
+  m_Parent: {fileID: 2100000, guid: 9e83d374f39fb7d41a86cda30de96f2d, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _EMISSIVE_SIMPLE
+  - _OUTLINE_NML
+  m_InvalidKeywords:
+  - _INVERSE_Z_AXIS_BLD_ON
+  - _IS_BLENDADDTOMATCAP_ON
+  - _IS_BLENDBASECOLOR_ON
+  - _IS_FILTER_HICUTPOINTLIGHTCOLOR_ON
+  - _IS_LIGHTCOLOR_1ST_SHADE_ON
+  - _IS_LIGHTCOLOR_2ND_SHADE_ON
+  - _IS_LIGHTCOLOR_AP_RIMLIGHT_ON
+  - _IS_LIGHTCOLOR_BASE_ON
+  - _IS_LIGHTCOLOR_HIGHCOLOR_ON
+  - _IS_LIGHTCOLOR_MATCAP_ON
+  - _IS_LIGHTCOLOR_RIMLIGHT_ON
+  - _SET_SYSTEMSHADOWSTOBASE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
