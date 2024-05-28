@@ -26,7 +26,10 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSIVE_SIMPLE
+  - _IS_ANGELRING_OFF
+  - _IS_TRANSCLIPPING_OFF
   - _OUTLINE_NML
+  - _SHADINGGRADEMAP
   m_InvalidKeywords:
   - _INVERSE_Z_AXIS_BLD_ON
   - _IS_BLENDADDTOMATCAP_ON
@@ -44,7 +47,9 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    IgnoreProjection: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -52,6 +57,6 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _StencilComp: 8
+    - _StencilComp: 0
     m_Colors: []
   m_BuildTextureStacks: []
