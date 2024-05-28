@@ -48,7 +48,9 @@ public class PlayerLook : MonoBehaviour, IClassHasChain
     }
     void PointMove()
     {
-        if(GameManager.Input.Aiming == false) { return; }
+        if (GameManager.Input.Aiming == false) { return; }
+
+        _status.currentSpeed = 0f;//¼Óµµ ºí·»´õ
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
