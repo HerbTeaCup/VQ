@@ -7,7 +7,7 @@ public class PlayerAnimation : MonoBehaviour, IClassHasChain
     PlayerStatus _status;
     Animator _anim;
 
-    bool _attackable = true;
+    bool _attackable = true; //애니메이션 중 코루틴 중복 방지
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class PlayerAnimation : MonoBehaviour, IClassHasChain
     {
         _status.isMoveable = false;
         _attackable = false;
-        yield return new WaitForSeconds(time / _status.animationSpeed); // 여기서 2f는 공격 애니메이션의 시간
+        yield return new WaitForSeconds(time / _status.animationSpeed);
         _status.isMoveable = true;
         _attackable = true;
     }
