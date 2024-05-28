@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, IClassHasChain
 {
     PlayerStatus _status;
     CharacterController _cc;
@@ -23,10 +23,13 @@ public class PlayerMove : MonoBehaviour
         GameManager.Input.InputDelegate += Move;
         GameManager.Input.InputDelegate += Gravity;
         GameManager.Input.InputDelegate += Rotate;
+
+        _status.AddForDestroy(this);
     }
 
     void Move()
     {
+        if(_status.isMoveable == false) { return; }
         float targetSpeed = GameManager.Input.Sprint ? _status.runSpeed : _status.walkSpeed;
 
         if (GameManager.Input.XZdir == Vector2.zero)
@@ -55,6 +58,12 @@ public class PlayerMove : MonoBehaviour
     void Rotate()
     {
         if(inputdir == Vector3.zero) { return; }
+
+        if (GameManager.Input.Aiming)
+        {
+
+            return;
+        }
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(inputdir), _status.rotateRatio * Time.deltaTime);
     }
 
@@ -71,5 +80,12 @@ public class PlayerMove : MonoBehaviour
         {
             _verticalSpeed += _gravity * Time.deltaTime;
         }
+    }
+
+    public void Clear()
+    {
+        GameManager.Input.InputDelegate -= Move;
+        GameManager.Input.InputDelegate -= Gravity;
+        GameManager.Input.InputDelegate -= Rotate;
     }
 }
