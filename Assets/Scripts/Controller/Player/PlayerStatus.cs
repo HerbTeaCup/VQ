@@ -7,7 +7,7 @@ public class PlayerStatus : MonoBehaviour
     List<IClassHasChain> chains = new List<IClassHasChain>();
 
     [Header("Movement")]
-    [SerializeField] LayerMask GroundLayer;
+    public LayerMask GroundLayer;
     [HideInInspector] public float currentSpeed = 0f;
     public float walkSpeed = 2f;
     public float runSpeed = 5f;

@@ -12,11 +12,14 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
     float _gravity = -9.8f;
     float _verticalSpeed = 0f;
 
+    Transform _point;
     Vector3 inputdir = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
     {
+        GetPoint();
+
         _cc = GetComponent<CharacterController>();
         _status = GetComponent<PlayerStatus>();
 
@@ -27,9 +30,23 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
         _status.AddForDestroy(this);
     }
 
+    void GetPoint()
+    {
+        if (_point != null) { return; }
+
+        foreach (Transform child in this.transform)
+        {
+            if (child.name == "MousePoint")
+            {
+                _point = child;
+                return;
+            }
+        }
+    }
+
     void Move()
     {
-        if(_status.isMoveable == false) { return; }
+        if(_status.isMoveable == false || GameManager.Input.Aiming) { return; }
         float targetSpeed = GameManager.Input.Sprint ? _status.runSpeed : _status.walkSpeed;
 
         if (GameManager.Input.XZdir == Vector2.zero)
@@ -57,13 +74,13 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
     }
     void Rotate()
     {
-        if(inputdir == Vector3.zero) { return; }
-
         if (GameManager.Input.Aiming)
         {
-
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(_point.position), _status.rotateRatio * Time.deltaTime);
             return;
         }
+
+        if (inputdir == Vector3.zero) { return; }
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(inputdir), _status.rotateRatio * Time.deltaTime);
     }
 
