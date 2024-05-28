@@ -66,7 +66,7 @@ public class PlayerLook : MonoBehaviour, IClassHasChain
             {
                 // 거리가 조건 이상이면, 조건만큼 떨어진 지점을 계산하여 이동
                 Vector3 direction = (hit.point - this.transform.position).normalized;
-                Vector3 targetPosition = this.transform.position + direction * 8f;
+                Vector3 targetPosition = this.transform.position + direction * maxDis;
                 _point.position = targetPosition;
             }
 
