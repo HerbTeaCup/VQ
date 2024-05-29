@@ -17,6 +17,8 @@ public class PlayerStatus : MonoBehaviour
     public bool isMoveable = true;
     [Header("Animation")]
     public float animationSpeed = 1f;
+    [Header("Battle")]
+    public ElementType type = ElementType.Fire;
 
     private void Start()
     {

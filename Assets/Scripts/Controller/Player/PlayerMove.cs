@@ -74,6 +74,8 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
     }
     void Rotate()
     {
+        if(_status.isMoveable == false) { return; }
+
         if (GameManager.Input.Aiming)
         {
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(_point.position), _status.rotateRatio * Time.deltaTime);
