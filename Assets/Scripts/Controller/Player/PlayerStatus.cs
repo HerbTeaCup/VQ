@@ -19,6 +19,7 @@ public class PlayerStatus : MonoBehaviour
     public float animationSpeed = 1f;
     [Header("Battle")]
     public ElementType type = ElementType.Fire;
+    public float fireRate = 1f;
 
     private void Start()
     {

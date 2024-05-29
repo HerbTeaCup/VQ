@@ -979,6 +979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6006aadb3354e048bb37f0032c909fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementals:
+  - {fileID: 1254724754748870, guid: ead2eb1ec6d8ee54fa5d36c7f5e30eef, type: 3}
+  - {fileID: 1332939437983934, guid: f433416470d4f204d923065e0764d5a5, type: 3}
+  - {fileID: 1428542714614976, guid: fa6b2eb4089fc9d4ab0d795b14de9925, type: 3}
 --- !u!4 &4167527902382465768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4512832811240762545, guid: 0402ebcc7af22b7468c2357010edebed,
