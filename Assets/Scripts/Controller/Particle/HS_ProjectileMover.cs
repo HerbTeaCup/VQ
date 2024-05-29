@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HS_ProjectileMover : MonoBehaviour
 {
+    public Vector3 dir = Vector3.zero;
+
     [SerializeField] protected float speed = 15f;
     [SerializeField] protected float hitOffset = 0f;
     [SerializeField] protected bool UseFirePointRotation;
@@ -67,13 +69,15 @@ public class HS_ProjectileMover : MonoBehaviour
     {
         if (speed != 0)
         {
-            rb.velocity = transform.forward * speed;      
+            rb.velocity = dir * speed;      
         }
     }
 
     //https ://docs.unity3d.com/ScriptReference/Rigidbody.OnCollisionEnter.html
     protected virtual void OnCollisionEnter(Collision collision)
     {
+        if (collision.transform.CompareTag("Player")) { return; }
+
         //Lock all axes movement and rotation
         rb.constraints = RigidbodyConstraints.FreezeAll;
         //speed = 0;

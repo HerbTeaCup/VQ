@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour, IManager
     public bool FireTrigger { get; private set; }
     public bool Aiming { get; private set; }
     public bool Sprint { get; private set; }
+    public int Weapon_index { get; set; }
 
     public void Updater()
     {
@@ -56,5 +57,13 @@ public class InputManager : MonoBehaviour, IManager
     {
         if (context.performed) { Sprint = true; }
         else if (context.canceled) { Sprint = false; }
+    }
+    public void LeftChange(InputAction.CallbackContext context)
+    {
+        if (context.canceled) { Weapon_index--; }
+    }
+    public void RightChange(InputAction.CallbackContext context)
+    {
+        if (context.canceled) { Weapon_index++; }
     }
 }

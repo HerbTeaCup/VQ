@@ -16,6 +16,8 @@ public class PlayerAnimation : MonoBehaviour, IClassHasChain
         _anim = GetComponent<Animator>();
 
         GameManager.Input.InputDelegate += ParameterUpdate;
+
+        _status.AddForDestroy(this);
     }
 
     void ParameterUpdate()

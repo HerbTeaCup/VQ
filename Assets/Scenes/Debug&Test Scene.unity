@@ -190,7 +190,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 1143
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -955,34 +955,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5926550023747633873, guid: 0402ebcc7af22b7468c2357010edebed,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 103155076517967437}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0402ebcc7af22b7468c2357010edebed, type: 3}
---- !u!1 &103155076517967436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5926550023747633873, guid: 0402ebcc7af22b7468c2357010edebed,
-    type: 3}
-  m_PrefabInstance: {fileID: 103155076517967435}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &103155076517967437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103155076517967436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6006aadb3354e048bb37f0032c909fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elementals:
-  - {fileID: 1254724754748870, guid: ead2eb1ec6d8ee54fa5d36c7f5e30eef, type: 3}
-  - {fileID: 1332939437983934, guid: f433416470d4f204d923065e0764d5a5, type: 3}
-  - {fileID: 1428542714614976, guid: fa6b2eb4089fc9d4ab0d795b14de9925, type: 3}
 --- !u!4 &4167527902382465768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4512832811240762545, guid: 0402ebcc7af22b7468c2357010edebed,

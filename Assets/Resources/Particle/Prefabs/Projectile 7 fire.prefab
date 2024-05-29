@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 54488790111006576}
   - component: {fileID: 135219337407746228}
   - component: {fileID: 108919900232066054}
-  - component: {fileID: -4088533209868785525}
-  - component: {fileID: -7851200590521280198}
-  m_Layer: 0
+  - component: {fileID: 3949546696431185060}
+  m_Layer: 10
   m_Name: Projectile 7 fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: {x: 0, y: 0, z: 0}
   speed: 15
   hitOffset: 0.1
   UseFirePointRotation: 0
@@ -174,7 +174,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &-4088533209868785525
+--- !u!114 &3949546696431185060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,18 +197,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &-7851200590521280198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254724754748870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b14160dbe95194a91f862d82bf285f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1800544799133088
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +208,7 @@ GameObject:
   - component: {fileID: 4000204042258922}
   - component: {fileID: 198347292852406180}
   - component: {fileID: 199381448505880882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5071,7 +5059,7 @@ GameObject:
   - component: {fileID: 4648228566563176}
   - component: {fileID: 198904408555212570}
   - component: {fileID: 199042042599827284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9912,7 +9900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8861943000613911297}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9949,7 +9937,7 @@ GameObject:
   - component: {fileID: 1925035534504327226}
   - component: {fileID: 329737889198186567}
   - component: {fileID: 6412190615643291113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14846,9 +14834,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8861943000613911297}
     m_Modifications:
+    - target: {fileID: 1033789153393210, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117256330352902, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126909459459230, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258516646242924, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284827934106646, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682315990178646, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1845764070681338, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
       propertyPath: m_Name
       value: Hit 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845764070681338, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950984331986788, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973191258884458, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4082612673821794, guid: ac2312a3e32471549882f1a6da5568e6, type: 3}
       propertyPath: m_RootOrder
@@ -15023,6 +15047,22 @@ PrefabInstance:
     - target: {fileID: 1023540632372170, guid: 12c5a36b60a39734f80150bc3e23e850, type: 3}
       propertyPath: m_Name
       value: Flash 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023540632372170, guid: 12c5a36b60a39734f80150bc3e23e850, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422696845553164, guid: 12c5a36b60a39734f80150bc3e23e850, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720421275153246, guid: 12c5a36b60a39734f80150bc3e23e850, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887156476188772, guid: 12c5a36b60a39734f80150bc3e23e850, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4752928875407616, guid: 12c5a36b60a39734f80150bc3e23e850, type: 3}
       propertyPath: m_RootOrder

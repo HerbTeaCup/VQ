@@ -8,15 +8,11 @@ public class GameManager : MonoBehaviour
     InputManager _input = null;
 
     CameraManager _cam = new CameraManager();
-    ResourcesManager _resources = new ResourcesManager();
-    PoolManager _pool = new PoolManager();
 
     //Property
     public static GameManager Instance { get { Init(); return _instance; } }
     public static InputManager Input { get { return Instance._input; } }
     public static CameraManager Cam { get { return Instance._cam; } }
-    public static ResourcesManager Resources { get { return Instance._resources; } }
-    public static PoolManager Pool { get { return Instance._pool; } }
 
 
     // Start is called before the first frame update
