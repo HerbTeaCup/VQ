@@ -28,6 +28,15 @@ public class CameraManager : IManager
 
         return virtualCams[key] as T;
     }
+    public void SetHighestPriority(string key)
+    {
+        foreach (CinemachineVirtualCameraBase item in virtualCams.Values)
+        {
+            item.Priority = 10;
+        }
+
+        virtualCams[key].Priority = 100;
+    }
     public void RemoveCamera(string key)
     {
         if (virtualCams.ContainsKey(key) == false)
