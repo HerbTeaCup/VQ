@@ -15,6 +15,8 @@ public class PlayerAnimation : MonoBehaviour, IClassHasChain
         _status = GetComponent<PlayerStatus>();
         _anim = GetComponent<Animator>();
 
+        _anim.applyRootMotion = false;
+
         GameManager.Input.InputDelegate += ParameterUpdate;
 
         _status.AddForDestroy(this);

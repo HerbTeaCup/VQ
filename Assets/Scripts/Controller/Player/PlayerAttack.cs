@@ -36,7 +36,10 @@ public class PlayerAttack : MonoBehaviour, IClassHasChain
         _status.fireCurrentRate = _status.fireRate;
         HS_ProjectileMover temp = Instantiate(elementals[GameManager.Input.Weapon_index], firePoint.position, this.transform.rotation).GetComponent<HS_ProjectileMover>();
 
-        temp.dir = (target.transform.position - firePoint.position).normalized;
+        //이 코드 적용시 직선으로만 나가지만 사거리에 제한을 따로 둬야함
+        //target.position = new Vector3(target.position.x, firePoint.position.y, target.position.z);
+
+        temp.dir = (target.position - firePoint.position).normalized;
         temp = null;
     }
     void IndexClamp()

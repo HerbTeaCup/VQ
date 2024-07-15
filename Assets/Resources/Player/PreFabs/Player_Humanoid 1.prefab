@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2147483648
   currentSpeed: 0
   walkSpeed: 2
   runSpeed: 5

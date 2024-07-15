@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
 
     void Move()
     {
-        if(_status.isMoveable == false || GameManager.Input.Aiming) { return; }
+        if(GameManager.Input.Aiming) { return; }
         float targetSpeed = GameManager.Input.Sprint ? _status.runSpeed : _status.walkSpeed;
 
         if (GameManager.Input.XZdir == Vector2.zero)
@@ -69,7 +69,14 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
         inputdir.x = GameManager.Input.XZdir.x;
         inputdir.z = GameManager.Input.XZdir.y;//이미 normalized 되어있음.
 
-        _cc.Move(inputdir * _speed * Time.deltaTime + new Vector3(0, _verticalSpeed, 0) * Time.deltaTime);
+        if (_status.isMoveable)
+        {
+            _cc.Move(inputdir * _speed * Time.deltaTime + new Vector3(0, _verticalSpeed, 0) * Time.deltaTime);
+        }
+        else
+        {
+            _cc.Move(new Vector3(0, _verticalSpeed, 0) * Time.deltaTime);
+        }
         _status.currentSpeed = _speed;
     }
     void Rotate()
@@ -78,7 +85,8 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
 
         if (GameManager.Input.Aiming)
         {
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(_point.position), _status.rotateRatio * Time.deltaTime);
+            //this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(_point.position), _status.rotateRatio * Time.deltaTime);
+            this.transform.LookAt(new Vector3(_point.position.x, this.transform.position.y, _point.position.z));
             return;
         }
 
