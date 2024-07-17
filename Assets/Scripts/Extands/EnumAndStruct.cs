@@ -4,3 +4,9 @@ public enum ElementType
     Water,
     Lightning
 }
+
+public enum InteracitveObjType
+{
+    Seed,
+    Box
+}

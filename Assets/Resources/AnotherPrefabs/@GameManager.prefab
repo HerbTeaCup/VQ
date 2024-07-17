@@ -220,6 +220,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8ad4dfb5-9010-4296-b69e-f69ef480d6c2
     m_ActionName: Player/ChangeWeaponRight[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4552820552071552198}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnInteractive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 542a5688-8434-47b1-88a7-53c754b347af
+    m_ActionName: Player/Interactive[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

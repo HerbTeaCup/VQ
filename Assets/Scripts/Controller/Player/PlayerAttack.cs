@@ -7,14 +7,17 @@ public class PlayerAttack : MonoBehaviour, IClassHasChain
     PlayerStatus _status;
 
     [Header("Bullet Prefab")]
-    [SerializeField] GameObject[] elementals = new GameObject[3];
+    [SerializeField] GameObject[] elementals;
     [SerializeField] Transform target;
     [SerializeField] Transform firePoint;
+
+    int[] _magazine;
 
     // Start is called before the first frame update
     void Start()
     {
         _status = GetComponent<PlayerStatus>();
+        _magazine = new int[elementals.Length];
         
         GameManager.Input.InputDelegate += IndexClamp;
         GameManager.Input.InputDelegate += StatusUpdate;
@@ -27,11 +30,14 @@ public class PlayerAttack : MonoBehaviour, IClassHasChain
     {
         if (_status.fireCurrentRate > 0f)
         {
+            _status.attackable = false;
             _status.fireCurrentRate -= Time.deltaTime;
             if (_status.fireCurrentRate < 0.01f) { _status.fireCurrentRate = 0f; }
             return;
         }
-        if (GameManager.Input.FireTrigger == false || GameManager.Input.Aiming == false) { return; }
+
+        _status.attackable = true;
+        if (GameManager.Input.FireTrigger == false || GameManager.Input.Aiming == false || _status.isCarrying) { return; }
 
         _status.fireCurrentRate = _status.fireRate;
         HS_ProjectileMover temp = Instantiate(elementals[GameManager.Input.Weapon_index], firePoint.position, this.transform.rotation).GetComponent<HS_ProjectileMover>();

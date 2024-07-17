@@ -46,10 +46,9 @@ public class PlayerMove : MonoBehaviour, IClassHasChain
 
     void Move()
     {
-        if(GameManager.Input.Aiming) { return; }
         float targetSpeed = GameManager.Input.Sprint ? _status.runSpeed : _status.walkSpeed;
 
-        if (GameManager.Input.XZdir == Vector2.zero)
+        if (GameManager.Input.XZdir == Vector2.zero || GameManager.Input.Aiming == true)
         {
             targetSpeed = 0f;
         }

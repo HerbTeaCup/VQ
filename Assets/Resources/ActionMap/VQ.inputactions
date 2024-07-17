@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interactive",
+                    "type": "Button",
+                    "id": "542a5688-8434-47b1-88a7-53c754b347af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -289,6 +298,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ChangeWeaponRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53f1637f-2d9b-4db1-b8f4-94b4b1c76853",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interactive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
