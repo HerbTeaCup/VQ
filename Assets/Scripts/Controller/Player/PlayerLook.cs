@@ -73,7 +73,7 @@ public class PlayerLook : MonoBehaviour, IClassHasChain
             }
 
             //0.4f 부분으로 이동하여 과한 시점이동 방지
-            _aiming.position = (this.transform.position + _point.position) * 0.4f;
+            _aiming.position = Vector3.Lerp(this.transform.position, _point.position, 0.4f);
         }
 
         Debug.DrawLine(Camera.main.transform.position, hit.point, Color.red);

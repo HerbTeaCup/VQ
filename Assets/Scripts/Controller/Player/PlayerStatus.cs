@@ -15,12 +15,17 @@ public class PlayerStatus : MonoBehaviour
     [Tooltip("각도 변화 정도")] [Range(5, 15)] public float rotateRatio = 10f;
     public bool isGrounded = false;
     public bool isMoveable = true;
+    public bool isCarrying = false;
     [Header("Animation")]
     public float animationSpeed = 1f;
     [Header("Battle")]
     public ElementType type = ElementType.Fire;
-    public float fireRate = 1.2f;
+    public float fireRate;
     public float fireCurrentRate = 0f;
+    public bool attackable = true;
+    [Header("Interactive Position")]
+    public GameObject SeedPoint;
+    public bool behaviourable = true;
 
     private void Start()
     {

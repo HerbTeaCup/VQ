@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour, IManager
     public bool Aiming { get; private set; }
     public bool Sprint { get; private set; }
     public int Weapon_index { get; set; }
+    public bool Interactive { get; private set; }
 
     public void Updater()
     {
@@ -65,5 +66,10 @@ public class InputManager : MonoBehaviour, IManager
     public void RightChange(InputAction.CallbackContext context)
     {
         if (context.canceled) { Weapon_index++; }
+    }
+    public void OnInteractive(InputAction.CallbackContext context)
+    {
+        if (context.performed) { Interactive = true; }
+        else if (context.canceled) { Interactive = false; }
     }
 }
