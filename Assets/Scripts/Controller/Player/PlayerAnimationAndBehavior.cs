@@ -55,6 +55,7 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
 
         if (_status.isCarrying)
         {
+            if (_hasItem) { return; }
             _anim.SetTrigger("Lift");
             _status.isCarrying = false;
             StartCoroutine(Waiting(0.7f));
