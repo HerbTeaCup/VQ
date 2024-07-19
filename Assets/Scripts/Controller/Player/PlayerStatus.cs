@@ -16,6 +16,7 @@ public class PlayerStatus : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoveable = true;
     public bool isCarrying = false;
+    public bool isClifAhead = false;
     [Header("Animation")]
     public float animationSpeed = 1f;
     [Header("Battle")]

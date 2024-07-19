@@ -26,6 +26,7 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
 
         GameManager.Input.InputDelegate += ParameterUpdate;
         GameManager.Input.InputDelegate += Founding;
+        GameManager.Input.InputDelegate += CheckCliff;
 
         _status.AddForDestroy(this);
     }
@@ -55,7 +56,7 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
 
         if (_status.isCarrying)
         {
-            if (_hasItem) { return; }
+            if (_hasItem || _status.isClifAhead) { return; }
             _anim.SetTrigger("Lift");
             _status.isCarrying = false;
             StartCoroutine(Waiting(0.7f));
@@ -84,6 +85,15 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
     {
         items = Physics.OverlapSphere(this.transform.position, _radius, 1 << 7);// 1<<7 == Intereaction Layer
         _hasItem = items.Length > 0;
+    }
+    void CheckCliff()
+    {
+        Vector3 startPos = this.transform.position + transform.forward * _radius;
+
+        //0.4f는 계단에서 문제가 생길 수도 있음.
+        bool frontCliff = !Physics.Raycast(startPos, Vector3.down, 0.4f);
+
+        _status.isClifAhead = frontCliff;
     }
     private void OnDrawGizmos()
     {
