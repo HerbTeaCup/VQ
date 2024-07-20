@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Seed : InteractableClass
 {
+    private void Start()
+    {
+        type = InteracitveObjType.Seed;
+    }
+
     public override void ElementHit(ElementType type)
     {
         base.ElementHit(type);

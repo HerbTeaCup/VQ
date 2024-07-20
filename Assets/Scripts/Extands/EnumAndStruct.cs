@@ -5,6 +5,16 @@ public enum ElementType
     Lightning
 }
 
+public enum BoxType
+{
+    X,
+    Ice,
+    Magma,
+    Cold_Magma,
+    Sprout,
+    Ballon
+}
+
 public enum InteracitveObjType
 {
     Seed,

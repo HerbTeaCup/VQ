@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class InteractableClass : MonoBehaviour, IPuzzleInteraction
 {
-    public InteracitveObjType type;
+   [HideInInspector] public InteracitveObjType type;
     protected bool ready = true;
 
     protected void ReadyCheck()
@@ -16,7 +16,7 @@ public abstract class InteractableClass : MonoBehaviour, IPuzzleInteraction
     {
         ReadyCheck();
 
-        Debug.Log("ElementHit Logic");
+        Debug.Log($"{type} ElementHit Logic");
     }
 
     public virtual void Interactive()

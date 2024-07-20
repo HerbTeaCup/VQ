@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     static GameManager _instance = null;
     InputManager _input = null;
 
+    PuzzleManager _puzzle = new PuzzleManager();
     CameraManager _cam = new CameraManager();
 
     GameObject _player;
@@ -14,8 +15,9 @@ public class GameManager : MonoBehaviour
     //Property
     public static GameManager Instance { get { Init(); return _instance; } }
     public static InputManager Input { get { return Instance._input; } }
+    public static PuzzleManager Puzzle { get { return Instance._puzzle; } }
     public static CameraManager Cam { get { return Instance._cam; } }
-    public static GameObject Player { get { return Instance._player; } }
+    public static GameObject Player { get { return Instance._player; } set { Instance._player = value; } }
 
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Input.Updater();
+        Puzzle.PuzzleUpdate();
     }
     private void LateUpdate()
     {
@@ -50,8 +53,6 @@ public class GameManager : MonoBehaviour
 
             temp.TryGetComponent<InputManager>(out _instance._input);
             if (_instance._input == null) { _instance._input = temp.AddComponent<InputManager>(); }
-
-            _instance._player = GameObject.Find("Player_Humanoid");
         }
     }
 }

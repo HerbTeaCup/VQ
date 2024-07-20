@@ -65,6 +65,7 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
 
         if (_hasItem)
         {
+            this.transform.LookAt(new Vector3(items[0].transform.position.x, this.transform.position.y, items[0].transform.position.z));
             InteracitveObjType type = items[0].GetComponent<InteractableClass>().type;
             switch (type)
             {
@@ -74,8 +75,9 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
                     StartCoroutine(Waiting());
                     break;
                 case InteracitveObjType.Box:
-                    Debug.Log("Box Interaction Logic");
-                    StartCoroutine(Waiting());
+                    if(items[0].GetComponent<IPuzzleBox>().pushable == false) { return; }
+                    _anim.SetTrigger("Push");
+                    StartCoroutine(Waiting(0.95f));
                     break;
             }
         }
