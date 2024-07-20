@@ -41,9 +41,9 @@ public class BoxClass : InteractableClass, IPuzzleBox
     }
     void Searching()
     {
-        Collider[] player = Physics.OverlapSphere(this.transform.position, 1f, 1 << 6);
+        if (cubeType == BoxType.Magma) { pushable = false; return; }
 
-        if(cubeType == BoxType.Magma) { pushable = false; return; }
+        Collider[] player = Physics.OverlapSphere(this.transform.position, 1f, 1 << 6);
         pushable = player.Length > 0;
     }
 
