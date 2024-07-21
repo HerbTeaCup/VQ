@@ -7,13 +7,9 @@ public class BoxClass : InteractableClass, IPuzzleBox
     [SerializeField] BoxType cubeType;
     public bool pushable { get; private set; }
 
-    Vector3 _pushDir;
-
     private void Start()
     {
         Init();
-
-        GameManager.Puzzle.PuzzleDelegate += Searching;
     }
 
     void Init()
@@ -38,13 +34,6 @@ public class BoxClass : InteractableClass, IPuzzleBox
     {
         base.Interactive();
         Push();
-    }
-    void Searching()
-    {
-        if (cubeType == BoxType.Magma) { pushable = false; return; }
-
-        Collider[] player = Physics.OverlapSphere(this.transform.position, 1f, 1 << 6);
-        pushable = player.Length > 0;
     }
 
     void Push()
@@ -77,6 +66,8 @@ public class BoxClass : InteractableClass, IPuzzleBox
                 closestDirection = direction;
             }
         }
+
+        if (Vector3.Dot(closestDirection, directionToPlayer) < 0.766f) { return; }
 
         // 박스를 가장 가까운 방향으로 밀어 이동합니다.
         Vector3 moveDirection = -closestDirection;
