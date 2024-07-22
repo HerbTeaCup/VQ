@@ -75,7 +75,7 @@ public class PlayerAnimationAndBehavior : MonoBehaviour, IClassHasChain
                     StartCoroutine(Waiting());
                     break;
                 case InteracitveObjType.Box:
-                    if(items[0].GetComponent<IPuzzleBox>().pushable == false) { return; }
+                    if(items[0].GetComponent<IPuzzleBox>().CheckAngle() == false) { return; }
                     _anim.SetTrigger("Push");
                     StartCoroutine(Waiting(0.95f));
                     break;

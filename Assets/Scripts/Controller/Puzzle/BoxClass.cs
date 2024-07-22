@@ -7,6 +7,8 @@ public class BoxClass : InteractableClass, IPuzzleBox
     [SerializeField] BoxType cubeType;
     public bool pushable { get; private set; }
 
+    Vector3 closestDirection = Vector3.zero;
+
     private void Start()
     {
         Init();
@@ -16,13 +18,13 @@ public class BoxClass : InteractableClass, IPuzzleBox
     {
         type = InteracitveObjType.Box;
 
-        if (cubeType != BoxType.Magma)
+        if (cubeType == BoxType.Magma)
         {
-            pushable = true;
+            pushable = false;
         }
         else
         {
-            pushable = false;
+            pushable = true;
         }
     }
 
@@ -38,7 +40,27 @@ public class BoxClass : InteractableClass, IPuzzleBox
 
     void Push()
     {
-        if (!pushable) return;
+        if(pushable == false) { return; } //혹시모르니 한번  더 체크
+
+        // 박스를 가장 가까운 방향으로 밀어 이동합니다.
+        Vector3 moveDirection = -closestDirection;
+        Vector3 newPosition = transform.position + moveDirection;
+
+        // 이동 가능한지 여부를 검사합니다.
+        if (IsValidPosition(newPosition))
+        {
+            transform.position = newPosition;
+        }
+    }
+    bool IsValidPosition(Vector3 position)
+    {
+        // 박스가 이동할 수 있는지 확인
+        return true;
+    }
+
+    public bool CheckAngle()
+    {
+        if (!pushable) { return false; }
 
         Vector3 boxPosition = transform.position;
         Vector3 playerPosition = GameManager.Player.transform.position;
@@ -53,7 +75,6 @@ public class BoxClass : InteractableClass, IPuzzleBox
             -transform.right    // 박스의 왼쪽 방향
         };
 
-        Vector3 closestDirection = Vector3.zero;
         float closestDotProduct = -1f; // 가장 가까운 방향의 Dot Product 초기값
 
         // 플레이어 방향과 박스 방향 간의 가장 가까운 방향을 찾습니다.
@@ -67,24 +88,6 @@ public class BoxClass : InteractableClass, IPuzzleBox
             }
         }
 
-        if (Vector3.Dot(closestDirection, directionToPlayer) < 0.766f) { return; }
-
-        // 박스를 가장 가까운 방향으로 밀어 이동합니다.
-        Vector3 moveDirection = -closestDirection;
-        Vector3 newPosition = boxPosition + moveDirection;
-
-        // 이동 가능한지 여부를 검사합니다.
-        if (IsValidPosition(newPosition))
-        {
-            transform.position = newPosition;
-        }
-        
-    }
-    bool IsValidPosition(Vector3 position)
-    {
-        // 박스가 이동할 수 있는지 확인합니다.
-        // 예를 들어, 충돌 검사를 추가할 수 있습니다.
-        // 이 예제에서는 기본적으로 박스가 자유롭게 이동할 수 있다고 가정합니다.
-        return true;
+        return Vector3.Dot(closestDirection, directionToPlayer) > 0.766f;
     }
 }

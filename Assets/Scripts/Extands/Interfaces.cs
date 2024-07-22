@@ -15,4 +15,5 @@ public interface IPuzzleInteraction
 public interface IPuzzleBox
 {
     public bool pushable { get; }
+    public bool CheckAngle();
 }
