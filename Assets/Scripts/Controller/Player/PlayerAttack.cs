@@ -20,7 +20,6 @@ public class PlayerAttack : MonoBehaviour, IClassHasChain
         _magazine = new int[elementals.Length];
         
         GameManager.Input.InputDelegate += IndexClamp;
-        GameManager.Input.InputDelegate += StatusUpdate;
         GameManager.Input.InputDelegate += Fire;
 
         _status.AddForDestroy(this);
@@ -37,14 +36,13 @@ public class PlayerAttack : MonoBehaviour, IClassHasChain
         }
 
         _status.attackable = true;
-        if (GameManager.Input.FireTrigger == false || GameManager.Input.Aiming == false || _status.isCarrying) { return; }
+        if (GameManager.Input.FireTrigger == false || GameManager.Input.Aiming == false || _status.isCarrying ) { return; }
+        //if(_magazine[GameManager.Input.Weapon_index] < 1) { return; }
 
         _status.fireCurrentRate = _status.fireRate;
         HS_ProjectileMover temp = Instantiate(elementals[GameManager.Input.Weapon_index], firePoint.position, this.transform.rotation).GetComponent<HS_ProjectileMover>();
 
-        //이 코드 적용시 직선으로만 나가지만 사거리에 제한을 따로 둬야함
-        //target.position = new Vector3(target.position.x, firePoint.position.y, target.position.z);
-
+        //Taget 방향
         temp.dir = (target.position - firePoint.position).normalized;
         temp = null;
     }
@@ -53,15 +51,10 @@ public class PlayerAttack : MonoBehaviour, IClassHasChain
         if(GameManager.Input.Weapon_index >= elementals.Length) { GameManager.Input.Weapon_index = 0; }
         else if(GameManager.Input.Weapon_index < 0) { GameManager.Input.Weapon_index = elementals.Length - 1; }
     }
-    void StatusUpdate()
-    {
-        _status.type = (ElementType)GameManager.Input.Weapon_index;
-    }
 
     public void Clear()
     {
         GameManager.Input.InputDelegate -= IndexClamp;
-        GameManager.Input.InputDelegate -= StatusUpdate;
         GameManager.Input.InputDelegate -= Fire;
     }
 }

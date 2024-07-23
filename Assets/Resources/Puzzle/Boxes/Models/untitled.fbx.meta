@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b8ddf5fab7bcd64db3dabf8d708b105
+guid: f45ac3a3d2db01347929be2ab6be3a91
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: X
-    second: {fileID: 2100000, guid: adc5e5250e34be94a9a7e8245d07348e, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 2c38d596c712a364b8383c4a81b300ca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: cube
-    second: {fileID: 2100000, guid: 8a2a1ac23750df6478a9039479c2fa6e, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: f5e374f5015db954c9550e131f40dc50, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

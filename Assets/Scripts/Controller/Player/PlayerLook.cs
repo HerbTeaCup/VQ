@@ -55,7 +55,7 @@ public class PlayerLook : MonoBehaviour, IClassHasChain
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 50f, _status.GroundLayer))
+        if (Physics.Raycast(ray, out hit, 50f, _status.GroundLayer | 1 << 7))
         {
             float dis = Vector3.Distance(this.transform.position, new Vector3(hit.point.x, this.transform.position.y, hit.point.z));
 

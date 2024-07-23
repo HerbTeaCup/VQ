@@ -20,9 +20,6 @@ public class PlayerStatus : MonoBehaviour
     [Header("Animation")]
     public float animationSpeed = 1f;
     [Header("Battle")]
-    public ElementType type = ElementType.Fire;
-    public GameObject[] Elementals;
-    public int[] Magazine;
     public float fireRate;
     public float fireCurrentRate = 0f;
     public bool attackable = true;
@@ -32,8 +29,6 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        Magazine = new int[Elementals.Length];
-
         GameManager.Player = this.gameObject;
 
         GameManager.Input.InputDelegate += GroundCheck;
