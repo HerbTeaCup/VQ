@@ -2,7 +2,8 @@ public enum ElementType
 {
     Fire,
     Water,
-    Lightning
+    Wind,
+    Forest
 }
 
 public enum BoxType

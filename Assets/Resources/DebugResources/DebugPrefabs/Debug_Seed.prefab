@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7269854900072180843}
   m_Layer: 7
   m_Name: Debug_Seed
-  m_TagString: Untagged
+  m_TagString: InteractiveElement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253ef99a033a6a34dab00101c1ab9712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SeedPoint: {fileID: 0}
+  type: 0

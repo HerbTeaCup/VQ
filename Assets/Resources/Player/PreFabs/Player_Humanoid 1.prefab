@@ -1905,8 +1905,8 @@ MonoBehaviour:
   isGrounded: 0
   isMoveable: 1
   isCarrying: 0
+  isClifAhead: 1
   animationSpeed: 1
-  type: 0
   fireRate: 1.4
   fireCurrentRate: 0
   attackable: 1
@@ -1967,7 +1967,8 @@ MonoBehaviour:
   elementals:
   - {fileID: 1254724754748870, guid: ead2eb1ec6d8ee54fa5d36c7f5e30eef, type: 3}
   - {fileID: 1332939437983934, guid: f433416470d4f204d923065e0764d5a5, type: 3}
-  - {fileID: 1428542714614976, guid: fa6b2eb4089fc9d4ab0d795b14de9925, type: 3}
+  - {fileID: 1564468091806366, guid: 489b3a2ec3e7cf949925d1b34247d1a9, type: 3}
+  - {fileID: 1985767573034186, guid: 7e5debf0606b3254faa6bca9a70b6713, type: 3}
   target: {fileID: 506963989535581051}
   firePoint: {fileID: 3029434487007549205}
 --- !u!1 &5960826921727852138
